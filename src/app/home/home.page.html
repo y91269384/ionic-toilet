@@ -20,7 +20,7 @@
     </ion-refresher-content>
   </ion-refresher>
   <ion-list>
-    <ion-item text-wrap *ngFor='let item of items'>
+    <ion-item text-wrap *ngFor="let item of items, let i= index" (click)="viewItem(i)">
       <ion-label>
         <b>{{item.name}}</b><br>
         <h5><font color='#dd7777'>{{item.address}}</font></h5>

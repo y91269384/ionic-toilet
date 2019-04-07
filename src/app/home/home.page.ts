@@ -25,6 +25,7 @@ export class HomePage {
     this.geolocation.getCurrentPosition().then((resp) => {
       this.data = this.http.get('https://plbpc013.ouhk.edu.hk/toilet/json-toilet-v2.php?lat='+resp.coords.latitude+'&lng='+resp.coords.longitude+'&display_row=15&lang=zh');
       this.data.subscribe(result => {
+        console.log[result];
         this.items = result;
       })
     }).catch((error) =>{
@@ -44,6 +45,13 @@ export class HomePage {
     event.target.complete();
   },500)
 }
+
+viewItem(i){
+  //console.log(this.items[i].address)
+  this.geolocation.getCurrentPosition().then((resp) => {
+     window.open("https://www.google.com/maps/dir/?api=1&origin="+resp.coords.latitude+","+resp.coords.longitude+"&destination="+this.items[i].name+","+this.items[i].address,'_system', 'location=yes');
+   })
+ }
 
   doRefresh(event) {
     console.log('Begin async operation');
