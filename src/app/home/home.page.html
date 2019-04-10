@@ -1,11 +1,12 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      <font size='5'>香港廁所</font><br>
+      <font size='5'>{{title}}</font>
+      <br>
       <font size='2' color='#ededed'>By Jason</font>
     </ion-title>
     <ion-button slot="end" routerLink="/about">
-      關於
+      {{about}}
     </ion-button>
   </ion-toolbar>
 </ion-header>
@@ -22,11 +23,10 @@
 
   <ion-list>
     <ion-item text-wrap *ngFor="let item of items, let i= index" (click)="viewItem(i)">
-      <ion-label>
-        <ion-icon float-right name="arrow-forward" size="large" top="0px"></ion-icon>
+      <ion-label text-wrap>
         <b>{{item.name}}</b><br>
         <h5><font color='#dd7777'>{{item.address}}</font></h5>
-        距離:<b>{{item.distance}}</b>米
+        {{dist}}:<b>{{item.distance}}</b>{{meter}}
       </ion-label>
     </ion-item>
   </ion-list>
