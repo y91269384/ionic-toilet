@@ -7,3 +7,13 @@
   --ion-toolbar-background: #3880ff;
   --ion-font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Roboto", sans-serif;
 }
+
+ion-icon {
+  position: relative;
+  font-size: 25px;
+  top: 5px;
+}
+
+ion-back-button-ios {
+  --color: #ffffff
+}

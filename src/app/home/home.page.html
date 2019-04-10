@@ -19,9 +19,11 @@
       refreshingText="Refreshing...">
     </ion-refresher-content>
   </ion-refresher>
+
   <ion-list>
     <ion-item text-wrap *ngFor="let item of items, let i= index" (click)="viewItem(i)">
       <ion-label>
+        <ion-icon float-right name="arrow-forward" size="large" top="0px"></ion-icon>
         <b>{{item.name}}</b><br>
         <h5><font color='#dd7777'>{{item.address}}</font></h5>
         距離:<b>{{item.distance}}</b>米
