@@ -35,13 +35,13 @@ export class HomePage {
     this.getLang();
     this.changeLanguage();
     this.locate();
+    this.reload();
   }
 
   public ionViewDidLoad() : void
   {
     this.getLang();
-    this._initialiseTranslation();
-    this.locate();
+    this._initialiseTranslation();;
   }
 
   public changeLanguage() : void
@@ -79,6 +79,7 @@ export class HomePage {
   saveLang(res){
     this.language=String(res['value']);
     this.changeLanguage();
+    this.locate();
   }
 
   locate(){
@@ -97,7 +98,7 @@ export class HomePage {
     this.i = this.i + 15;
     setTimeout(() => {
     this.geolocation.getCurrentPosition().then((resp) => {
-      this.data = this.http.get('https://plbpc013.ouhk.edu.hk/toilet/json-toilet-v2.php?lat='+resp.coords.latitude+'&lng='+resp.coords.longitude+'&display_row=15&row_index='+this.i+'&lang'+this.language);
+      this.data = this.http.get('https://plbpc013.ouhk.edu.hk/toilet/json-toilet-v2.php?lat='+resp.coords.latitude+'&lng='+resp.coords.longitude+'&display_row=15&row_index='+this.i+'&lang='+this.language);
       this.data.subscribe(result => {
       this.items = this.items.concat(result);
       })
@@ -112,6 +113,10 @@ viewItem(i){
      window.open("https://www.google.com/maps/dir/?api=1&origin="+resp.coords.latitude+","+resp.coords.longitude+"&destination="+this.items[i].name+","+this.items[i].address,'_system', 'location=yes');
    })
  }
+
+reload(){
+  this.locate();
+}
 
   doRefresh(event) {
     console.log('Begin async operation');
