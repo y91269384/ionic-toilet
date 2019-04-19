@@ -41,7 +41,7 @@ export class HomePage {
   public ionViewDidLoad() : void
   {
     this.getLang();
-    this._initialiseTranslation();;
+    this._initialiseTranslation();
   }
 
   public changeLanguage() : void
@@ -63,11 +63,11 @@ export class HomePage {
     this.dist = this.translate.instant("home.Dist");
     this.meter = this.translate.instant("home.meter");
     this.about = this.translate.instant("home.about");
-  }, 250);
+  }, 750);
   }
   
   getLang(){
-    this.globalization.getLocaleName()
+    this.globalization.getPreferredLanguage()
     .then(res => this.saveLang(res))
     .catch(e => this.errorHandle(e));
   }

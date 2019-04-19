@@ -3,7 +3,7 @@
     <ion-title>
       <font size='5'>{{title}}</font>
       <br>
-      <font size='2' color='#ededed'>By Jason</font>
+      <font size='2' color='#ededed'>By Jason ({{language}})</font>
     </ion-title>
     <ion-button slot="end" routerLink="/about">
       {{about}}
@@ -15,9 +15,7 @@
   <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
     <ion-refresher-content
       pullingIcon="arrow-dropdown"
-      pullingText="Pull to refresh"
-      refreshingSpinner="circles"
-      refreshingText="Refreshing...">
+      refreshingSpinner="circles">
     </ion-refresher-content>
   </ion-refresher>
 
@@ -33,8 +31,7 @@
 
   <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
     <ion-infinite-scroll-content
-      loadingSpinner="bubbles"
-      loadingText="Loading more data...">
+      loadingSpinner="bubbles">
     </ion-infinite-scroll-content>
   </ion-infinite-scroll>
 </ion-content>
