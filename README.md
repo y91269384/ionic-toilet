@@ -51,11 +51,11 @@ Ionic 4
 AngularJS 7
 
 ## Versioning
-For the versions available, see the [tags on this repository](https://github.com/y91269384/ionic-toilet/tags). 
+For the versions available, see the [tags on this repository](https://github.com/jasonleung101/ionic-toilet/tags). 
 
 ## Authors
 
-* **Jason Leung** - *Initial work* - [PurpleBooth](https://github.com/y91269384)
+* **Jason Leung** - *Initial work* - [PurpleBooth](https://github.com/jasonleung101)
 
 ## Acknowledgments
 
